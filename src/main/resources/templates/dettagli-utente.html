@@ -1,0 +1,52 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title></title>
+<meta charset="utf-8">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
+</head>
+
+<body>
+
+<h1>Info Utente</h1>
+
+	<div >
+		
+
+					<thead class="thead thead-dark">
+						<p th:text="${utente.nome}"></p>
+						<hr>
+						<p th:text="${utente.cognome}"></p>
+						<hr>
+						<p th:text="${utente.annoDiNascita}"></p>
+						<hr>
+						<p th:text="${utente.indirizzoResidenza}"></p>
+						<hr>
+						
+							<th><a href="/utente/new"> 
+							<i class="fas fa-user-plus"></i></a>
+							
+	
+					
+			
+			
+			
+			
+			</div>
+
+			
+
+			<a class="btn btn-primary" href="/utenti/"><i
+				class="fas fa-backspace"></i></a>
+
+			<script
+				src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</body>
+
+</html>

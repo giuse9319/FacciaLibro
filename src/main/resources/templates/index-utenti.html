@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
+</head>
+<body>
+<h1>Utenti</h1>
+
+
+
+
+<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<table class="table table-hover">
+
+					<thead class="thead thead-dark">
+						<tr>
+						
+							<th>Nome</th>
+							<th>Cognome</th>
+							<th>Anno di Nascita</th>
+							<th>Indirizzo di residenza</th>
+							<th>Numero telefono</th>
+							<th>Istante Creazione</th>
+								<th><a href="/utente/new"> 
+							<i class="fas fa-user-plus"></i></a>
+							
+	
+					
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+
+					<tbody>
+					
+							<td th:text="${Nome}"></td>
+						    <td th:text="${Cognome}"></td>
+							<td th:text="${annoDiNascita}"></td>
+							<td th:text="${indirizzoResidenza}"></td>
+							<td th:text="${numeroTelefono}"></td>
+							<td th:text="${istanteCreazione}"></td>
+					        
+						</tr>
+					
+					</tbody>
+					
+					</table>
+                    
+                   
+
+<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js">
+		</script>
+</body>
+</html>

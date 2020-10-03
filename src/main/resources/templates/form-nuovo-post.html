@@ -1,0 +1,31 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>Nuovo Utente</title>
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<form action="/utenti/" method="POST">
+		<p>Titolo:</p>
+		<input type="text" name="titolo" required> <br>
+		<p>Testo:</p>
+		<input type="text" name="testo"> <br>
+ 		<p>Data creazione:</p>
+ 		<input type="text" name="istanteCreazione"> <br> 
+ 	
+ 		<br> 
+		
+		<input class="btn btn-info" type="submit">
+		
+	</form>
+	
+
+
+</body>
+
+</html>
