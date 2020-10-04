@@ -24,7 +24,7 @@
 						
 							<th>Nome</th>
 							<th>Cognome</th>
-							
+							<th>Anno di Nascita</th>
 							<th>indirizzo Residenza</th>
 							<th>numero telefono</th>
 							<th>Data Creazione</th>
@@ -43,7 +43,7 @@
 			<tr th:each="u: ${listaUtenti}">
 				<td th:text="${u.nome}"></td>
 				<td th:text="${u.cognome}"></td>
-				
+				<td th:text="${u.annoDiNascita}"></td>
 				<td th:text="${u.indirizzoResidenza}"></td>
 				<td th:text="${u.numeroTelefono}"></td>
 				<td th:text="${u.istanteCreazione}"></td>

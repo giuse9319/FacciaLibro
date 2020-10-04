@@ -22,33 +22,12 @@ public class ServicePost {
 //		listaPost.sort((o1, o2) -> o1.getIstanteCreazione().compareTo(o2.getIstanteCreazione()));
 //		return listaPost;
 //	}
-	public List<Post> leggiPost() {
+	public List<Post> leggiPost(Post post) {
+		post.getUtenteCreazione();
 		return (List<Post>) postRepository.findAll();
 
 	}
 
-//	public void creaNuovoPost(Post post, Utente utente) {
-//
-//		List<Utente> listaUtenti = (List<Utente>) utenteRepository.findAll();
-//
-//		List<Post> listaPost = new ArrayList();
-//
-//		List<Post> listaPostTutti = (List<Post>) postRepository.findAll();
-//
-//		post.getIstanteCreazione().now();
-//
-//		for (Utente u : listaUtenti) {
-//			if (utente.getNome().equalsIgnoreCase(u.getNome())
-//					&& (utente.getCognome().equalsIgnoreCase(u.getCognome()))) {
-//
-//				listaUtenti.add(u);
-//				listaPost.add(post);
-//				utenteRepository.save(u);
-//				postRepository.save(post);
-//			}
-//		}
-//
-//	}
 	public void creaNuovoPost(Post post) {
 
 		post.getIstanteCreazione().now();

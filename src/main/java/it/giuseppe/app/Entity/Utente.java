@@ -30,6 +30,14 @@ public class Utente {
 
 	}
 
+	public String getAnnoDiNascita() {
+		return annoDiNascita;
+	}
+
+	public void setAnnoDiNascita(String annoDiNascita) {
+		this.annoDiNascita = annoDiNascita;
+	}
+
 	public Long getId() {
 		return id;
 	}

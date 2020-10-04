@@ -11,12 +11,12 @@ import it.giuseppe.app.Entity.Utente;
 import it.giuseppe.app.Repository.RepositoryTelefono;
 
 @Service
-public class SeviceTelefono {
+public class ServiceTelefono {
 
 	@Autowired
 	RepositoryTelefono telefonoRepository;
 
-	public List<Telefono> creaTelefono(Utente utente) {
+	public List<Telefono> creaNuovoTelefono(Telefono telefono, Utente utente) {
 
 		List<Telefono> listaNumeri = new ArrayList<>();
 
@@ -26,5 +26,9 @@ public class SeviceTelefono {
 
 		}
 		return listaNumeri;
+	}
+
+	public List<Telefono> leggiListaUtenti() {
+		return (List<Telefono>) telefonoRepository.findAll();
 	}
 }

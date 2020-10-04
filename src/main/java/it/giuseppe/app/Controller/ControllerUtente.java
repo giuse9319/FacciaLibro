@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.giuseppe.app.Entity.Utente;
+import it.giuseppe.app.Service.ServiceTelefono;
 import it.giuseppe.app.Service.ServiceUtente;
 
 @Controller
@@ -19,11 +20,14 @@ public class ControllerUtente {
 
 	@Autowired
 	ServiceUtente serviceUtente;
+	ServiceTelefono serviceTelefono;
 
 	@GetMapping("/")
 	public String index(Model model) {
 		List<Utente> listaUtenti = serviceUtente.leggiListaUtenti();
+
 		model.addAttribute("listaUtenti", listaUtenti);
+
 		return "index-utenti";
 	}
 
