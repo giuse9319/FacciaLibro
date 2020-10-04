@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns:th="http://www.tymeleaf.org" lang="it">
-
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
@@ -11,12 +10,11 @@
 	rel="stylesheet">
 </head>
 <body>
-<h1>Utenti</h1>
+<body>
 
-
-
-
-<div class="container">
+	<h1>Lista Utenti</h1>
+	
+	<div class="container">
 		<div class="row">
 			<div class="col-md-6 offset-md-3">
 				<table class="table table-hover">
@@ -26,39 +24,40 @@
 						
 							<th>Nome</th>
 							<th>Cognome</th>
-							<th>Anno di Nascita</th>
-							<th>Indirizzo di residenza</th>
-							<th>Numero telefono</th>
-							<th>Istante Creazione</th>
-								<th><a href="/utente/new"> 
-							<i class="fas fa-user-plus"></i></a>
 							
+							<th>indirizzo Residenza</th>
+							<th>numero telefono</th>
+							<th>Data Creazione</th>
+							<th><a href="/utenti/new"> 
+							<i class="fas fa-user-plus"></i></a>
 	
-					
+							</th>
 							<th></th>
 							<th></th>
 						</tr>
 					</thead>
+	
+	
+	<div> 
+		<tbody>
+			<tr th:each="u: ${listaUtenti}">
+				<td th:text="${u.nome}"></td>
+				<td th:text="${u.cognome}"></td>
+				
+				<td th:text="${u.indirizzoResidenza}"></td>
+				<td th:text="${u.numeroTelefono}"></td>
+				<td th:text="${u.istanteCreazione}"></td>
+				<td><a th:href="${u.id}"> <i class="fas fa-info"></i></a></td> 
+		        
 
-					<tbody>
-					
-							<td th:text="${Nome}"></td>
-						    <td th:text="${Cognome}"></td>
-							<td th:text="${annoDiNascita}"></td>
-							<td th:text="${indirizzoResidenza}"></td>
-							<td th:text="${numeroTelefono}"></td>
-							<td th:text="${istanteCreazione}"></td>
-					        
-						</tr>
-					
-					</tbody>
-					
-					</table>
-                    
-                   
+			</tr>
+		</tbody>
+</div>
+	
 
 <script
 		src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js">
 		</script>
 </body>
+
 </html>

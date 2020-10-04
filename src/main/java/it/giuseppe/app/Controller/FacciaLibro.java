@@ -22,6 +22,6 @@ public class FacciaLibro {
 	public String paginaPrincipale(Model model) {
 		List<Post> listaPost = postService.leggiPost();
 		model.addAttribute("listaPost", listaPost);
-		return "index-facciaLibro";
+		return "index-faccialibro";
 	}
 }

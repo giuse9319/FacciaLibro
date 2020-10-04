@@ -38,12 +38,12 @@ public class ControllerUtente {
 		return "redirect:/utenti/";
 	}
 
-	@GetMapping("/{id")
+	@GetMapping("/{id}")
 	public String mostraUtente(@PathVariable Long id, Model model) {
 
 		Utente utente = serviceUtente.mostraUtenteById(id);
 		model.addAttribute("utente", utente);
-		return "dettagli-droga";
+		return "dettagli-utente";
 	}
 
 }

@@ -18,7 +18,7 @@ public class Utente {
 
 	private String nome;
 	private String cognome;
-	private int annoDiNascita;
+	private String annoDiNascita;
 	private String indirizzoResidenza;
 
 	private LocalDateTime istanteCreazione = LocalDateTime.now();
@@ -54,11 +54,11 @@ public class Utente {
 		this.cognome = cognome;
 	}
 
-	public int getEta() {
+	public String getEta() {
 		return annoDiNascita;
 	}
 
-	public void setEta(int eta) {
+	public void setEta(String eta) {
 		this.annoDiNascita = eta;
 	}
 

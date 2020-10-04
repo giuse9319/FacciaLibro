@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.giuseppe.app.Entity.Post;
-import it.giuseppe.app.Entity.Utente;
 import it.giuseppe.app.Service.ServicePost;
 
 @Controller
@@ -25,8 +24,7 @@ public class ControllerPost {
 	public String leggiPost() {
 
 		List<Post> listaPost = postService.leggiPost();
-
-		return "index-post";
+		return "index-faccialibro";
 	}
 
 	@GetMapping("/new")
@@ -35,13 +33,13 @@ public class ControllerPost {
 	}
 
 	@PostMapping("/")
-	public String creaNuovoPost(Post post, Utente utente) {
-		postService.creaNuovoPost(post, utente);
-		return "redirect:/post/";
+	public String creaNuovoPost(Post post) {
+		postService.creaNuovoPost(post);
+		return "redirect:/faccialibro/";
 
 	}
 
-	@GetMapping("/{id")
+	@GetMapping("/{id}")
 	public String mostraDettaglioPost(@PathVariable Long id, Model model) {
 		Post post = postService.mostraDettagliPostById(id);
 		model.addAttribute("post", post);
