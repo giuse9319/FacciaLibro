@@ -49,6 +49,6 @@ public class ControllerPost {
 	@PostMapping("/{id}/delete")
 	public String rimuoviPost(@PathVariable Long id) {
 		postService.rimuoviPost(id);
-		return "redirect:/post/";
+		return "redirect:/facciaLibro/";
 	}
 }

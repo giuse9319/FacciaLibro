@@ -3,7 +3,11 @@
 
 <head>
 <title>Index Utenti</title>
-<link rel="stylesheet" href="facciaLibroCSS.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +28,10 @@
 				<td th:text="${p.testo}"></td>
 				<br>
 		        <td th:text="${p.istanteCreazione}"></td>
-			<br>
+		        <br>
+		        
+			<td><a th:href="${p.id} + '/delete' "><input type="submit" value="cancella Post"></a></td>
+		
 			
 			<br>
 			

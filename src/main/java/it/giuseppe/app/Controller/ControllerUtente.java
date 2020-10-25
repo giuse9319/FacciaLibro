@@ -46,8 +46,14 @@ public class ControllerUtente {
 	public String mostraUtente(@PathVariable Long id, Model model) {
 
 		Utente utente = serviceUtente.mostraUtenteById(id);
-		model.addAttribute("utente", utente);
+		model.addAttribute("utenteSelezionato", utente);
 		return "dettagli-utente";
 	}
 
+	@PostMapping("/{id}/delete")
+	public String deleteUtente(@PathVariable Long id) {
+		serviceUtente.rimuoviUtente(id);
+		return "redirect:/utenti/";
+
+	}
 }

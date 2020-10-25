@@ -31,4 +31,9 @@ public class ServiceUtente {
 		return repositoryUtente.findById(id).get();
 	}
 
+	public void rimuoviUtente(Long id) {
+		repositoryUtente.deleteById(id);
+
+	}
+
 }
