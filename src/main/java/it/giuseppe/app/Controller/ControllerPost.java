@@ -41,8 +41,8 @@ public class ControllerPost {
 
 	@GetMapping("/{id}")
 	public String mostraDettaglioPost(@PathVariable Long id, Model model) {
-		Post post = postService.mostraDettagliPostById(id);
-		model.addAttribute("post", post);
+		Post listaPost = postService.mostraDettagliPostById(id);
+		model.addAttribute("listaPost", listaPost);
 		return "index-facciaLibro";
 	}
 

@@ -14,29 +14,28 @@
 
 <body>
 
-<h1>Info Utente</h1>
+	<h1>Info Utente</h1>
 
-	<div >
-
-
-		<thead class="thead thead-dark">
-			<p th:text="${utente.nome}"></p>
-			<p th:text="${utente.cognome}"></p>
-			<p th:text="${utente.indirizzoResidenza}"></p>
-			<p th:text="${utente.annoDiNascita}"></p>
-			
+	<h2 th:text="${utente.nome}"></h2> 
+	
+	<p>lista post: </p>
+	<br>
+ 	<table>
 		<tbody>
-				
-				
+		
+			<tr th:each="p: ${listaPost}">
+				<td th:text="${p.titolo}"></td>
+				<td th:text="${p.testo}"></td>
+				<td th:text="${p.istanteCreazione}"></td>	
+			</tr>
+		</tbody>
+	</table>  
+	<br>
+	<a href="/utenti/">torna alla home page utenti</a>
 
+</body>
 
-
-
-				</tr>
-
-			</tbody>
-							<th><a href="/utente/new"> 
-							<i class="fas fa-user-plus"></i></a>
+						
 							
 	
 					
@@ -46,10 +45,6 @@
 			
 			</div>
 
-			
-
-			<a class="btn btn-primary" href="/utenti/"><i
-				class="fas fa-backspace"></i></a>
 
 			<script
 				src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
