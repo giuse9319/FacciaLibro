@@ -43,12 +43,12 @@ public class ControllerPost {
 	public String mostraDettaglioPost(@PathVariable Long id, Model model) {
 		Post listaPost = postService.mostraDettagliPostById(id);
 		model.addAttribute("listaPost", listaPost);
-		return "index-facciaLibro";
+		return "index-faccialibro";
 	}
 
-	@PostMapping("/{id}/delete")
+	@GetMapping("/{id}/delete")
 	public String rimuoviPost(@PathVariable Long id) {
 		postService.rimuoviPost(id);
-		return "redirect:/facciaLibro/";
+		return "redirect:/faccialibro/";
 	}
 }

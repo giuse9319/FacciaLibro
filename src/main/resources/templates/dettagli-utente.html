@@ -14,42 +14,37 @@
 
 <body>
 
-	<h1>Info Utente</h1>
-	<div >
+<h1>Info Utente</h1>
+<div >
+<table>
+<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Cognome</th>
+				<tr>
+			</thead>	
+
+						<tbody>
 						<tr>
-						<th>Nome</th>
-						<th>Cognome</th>
-<div>
-<div>
+							
+								<td th:text="${utenteSelezionato.nome}"></td>
+								<td th:text="${utenteSelezionato.cognome}"></td>
 
-<tbody>
-   <tr th:each="u: ${listaUtenti}">
-				<td th:text="${u.nome}"></td>
-				<td th:text="${u.cognome}"></td>
-				
-			</tr>
-		</tbody>
-
+							</tr>
+						</tbody>
+		</table>
 </div>	
+
+<div>
 	<p>lista post: </p>
 	<br>
-	<tr th:each="p :${utenteSelezionato.post}">
-
-					<td th:text="${p.titolo}"></td>
-
-
-					<td th:text="${p.testo}"></td>
-
+		<table>
 	
- 	<table>
-		<tbody>
-		
-					</tr>
-		</tbody>
+ 
 	</table>  
-	<br>
+
 	<a href="/utenti/">torna alla home page utenti</a>
-	
+</div>		
 
 </body>
 
