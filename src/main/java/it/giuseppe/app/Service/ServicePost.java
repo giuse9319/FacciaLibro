@@ -22,8 +22,8 @@ public class ServicePost {
 //		listaPost.sort((o1, o2) -> o1.getIstanteCreazione().compareTo(o2.getIstanteCreazione()));
 //		return listaPost;
 //	}
-	public List<Post> leggiPost(Post post) {
-		post.getUtenteCreazione();
+	public List<Post> leggiPost() {
+
 		return (List<Post>) postRepository.findAll();
 
 	}

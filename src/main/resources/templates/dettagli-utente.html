@@ -39,7 +39,17 @@
 	<p>lista post: </p>
 	<br>
 		<table>
-	
+	<tr th:each="p :${listaPostUtente}">
+
+					<td th:text="${p.titolo}"></td>
+
+
+					<td th:text="${p.testo}"></td>
+
+
+
+
+				</tr>
  
 	</table>  
 

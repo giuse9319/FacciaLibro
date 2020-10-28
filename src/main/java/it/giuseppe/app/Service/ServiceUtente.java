@@ -14,6 +14,8 @@ public class ServiceUtente {
 
 	@Autowired
 	RepositoryUtente repositoryUtente;
+	@Autowired
+	ServicePost servicePost;
 
 	public List<Utente> leggiListaUtenti() {
 		return (List<Utente>) repositoryUtente.findAll();
@@ -29,6 +31,7 @@ public class ServiceUtente {
 
 	public Utente mostraUtenteById(Long id) {
 		return repositoryUtente.findById(id).get();
+
 	}
 
 	public void rimuoviUtente(Long id) {

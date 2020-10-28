@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import it.giuseppe.app.Entity.Post;
 import it.giuseppe.app.Entity.Utente;
+import it.giuseppe.app.Service.ServicePost;
 import it.giuseppe.app.Service.ServiceTelefono;
 import it.giuseppe.app.Service.ServiceUtente;
 
@@ -20,7 +22,10 @@ public class ControllerUtente {
 
 	@Autowired
 	ServiceUtente serviceUtente;
+	@Autowired
 	ServiceTelefono serviceTelefono;
+	@Autowired
+	ServicePost servicePost;
 
 	@GetMapping("/")
 	public String index(Model model) {
@@ -44,9 +49,17 @@ public class ControllerUtente {
 
 	@GetMapping("/{id}")
 	public String mostraUtente(@PathVariable Long id, Model model) {
-
 		Utente utente = serviceUtente.mostraUtenteById(id);
+		List<Post> postUtenti = servicePost.leggiPost();
+		/*
+		 * for (Post p : postUtenti) { if (p.getUtenteCreazione().getId().equals(id)) {
+		 * utente.getPost().add(p); } }
+		 * 
+		 * List<Post> listaPostUtente = utente.getPost();
+		 * model.addAttribute("listaPostUtente", listaPostUtente);
+		 */
 		model.addAttribute("utenteSelezionato", utente);
+		model.addAttribute("listaPostUtente", postUtenti);
 		return "dettagli-utente";
 	}
 

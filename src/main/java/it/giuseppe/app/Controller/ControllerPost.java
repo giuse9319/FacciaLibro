@@ -21,9 +21,9 @@ public class ControllerPost {
 	ServicePost postService;
 
 	@GetMapping("/")
-	public String leggiPost(Post post) {
-
-		List<Post> listaPost = postService.leggiPost(post);
+	public String leggiPost(Model model) {
+		List<Post> listaPost = postService.leggiPost();
+		model.addAttribute("listaPost", listaPost);
 		return "index-faccialibro";
 	}
 

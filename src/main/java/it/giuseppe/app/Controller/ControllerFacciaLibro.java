@@ -23,8 +23,8 @@ public class ControllerFacciaLibro {
 	ServiceUtente serviceUtente;
 
 	@GetMapping("/")
-	public String paginaPrincipale(Model model, Post post) {
-		List<Post> listaPost = postService.leggiPost(post);
+	public String paginaPrincipale(Model model) {
+		List<Post> listaPost = postService.leggiPost();
 		model.addAttribute("listaPost", listaPost);
 		return "index-faccialibro";
 	}

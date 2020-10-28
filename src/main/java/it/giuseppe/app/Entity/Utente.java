@@ -26,6 +26,13 @@ public class Utente {
 	@OneToMany
 	private List<Telefono> numeroTelefono;
 
+	@OneToMany
+	private List<Post> post;
+
+	public List<Post> getPost() {
+		return post;
+	}
+
 	public Utente() {
 
 	}
@@ -99,6 +106,11 @@ public class Utente {
 		return "Utente [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", eta=" + annoDiNascita
 				+ ", indirizzoResidenza=" + indirizzoResidenza + ", istanteCreazione=" + istanteCreazione
 				+ ", numeroTelefono=" + numeroTelefono + "]";
+	}
+
+	public void setPost(List<Post> postUtente) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
