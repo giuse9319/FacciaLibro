@@ -51,15 +51,18 @@ public class ControllerUtente {
 	public String mostraUtente(@PathVariable Long id, Model model) {
 		Utente utente = serviceUtente.mostraUtenteById(id);
 		List<Post> postUtenti = servicePost.leggiPost();
-		/*
-		 * for (Post p : postUtenti) { if (p.getUtenteCreazione().getId().equals(id)) {
-		 * utente.getPost().add(p); } }
-		 * 
-		 * List<Post> listaPostUtente = utente.getPost();
-		 * model.addAttribute("listaPostUtente", listaPostUtente);
-		 */
+
+		for (Post p : postUtenti) {
+			if (p.getUtenteCreazione().getId().equals(id)) {
+				utente.getPost().add(p);
+			}
+		}
+
+		List<Post> listaPostUtente = utente.getPost();
+
 		model.addAttribute("utenteSelezionato", utente);
 		model.addAttribute("listaPostUtente", postUtenti);
+		model.addAttribute("listaPostUtente", listaPostUtente);
 		return "dettagli-utente";
 	}
 

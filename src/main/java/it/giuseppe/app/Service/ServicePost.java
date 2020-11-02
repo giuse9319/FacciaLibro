@@ -17,16 +17,17 @@ public class ServicePost {
 	@Autowired
 	RepositoryUtente utenteRepository;
 
-//	public List<Post> leggiPost() {
-//		List<Post> listaPost = (List<Post>) postRepository.findAll();
-//		listaPost.sort((o1, o2) -> o1.getIstanteCreazione().compareTo(o2.getIstanteCreazione()));
-//		return listaPost;
-//	}
 	public List<Post> leggiPost() {
-
-		return (List<Post>) postRepository.findAll();
-
+		List<Post> listaPost = (List<Post>) postRepository.findAll();
+		listaPost.sort((o1, o2) -> o1.getIstanteCreazione().compareTo(o2.getIstanteCreazione()));
+		return listaPost;
 	}
+//
+//	public List<Post> leggiPost() {
+//
+//		return (List<Post>) postRepository.findAll();
+//
+//	}
 
 	public void creaNuovoPost(Post post) {
 
